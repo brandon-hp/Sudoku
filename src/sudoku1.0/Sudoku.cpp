@@ -36,7 +36,9 @@ void Sudoku::dfs(int currow, int curcol)
 		IsOver = true;
 		return;
 	}
-
+	if (currow == 9) {
+		return;
+	}
 
 	int Gindex = currow / 3 * 3 + curcol / 3 + 1;
 	for (int i = 0; i < 9; i++)
@@ -93,7 +95,7 @@ void Sudoku::FillFile(FILE* w)
 int Sudoku::GetFile(FILE *r)
 {
 	memset(index, 0, sizeof(index));
-	char buffer[20];
+	char buffer[1024];
 	for (int i = 0; i < 9; i++)
 	{
 		if (fgets(buffer, 1024, r) == NULL)
