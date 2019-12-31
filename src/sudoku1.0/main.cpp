@@ -55,6 +55,11 @@ void CreateSudokuN(long long );
  {
 	 FILE *Write;
 	 fopen_s(&Write, TARGET, "w");
+	 if (Write == NULL)
+	 {
+		 cout << "创建文件错误"<<endl;
+		 return;
+	 }
 	 for (long long i = 0; i < num; i++)
 	 {
 
@@ -71,6 +76,16 @@ void CreateSudokuN(long long );
 	 FILE *Read, *Write;
 	 fopen_s(&Read, path, "r");
 	 fopen_s(&Write, TARGET, "w");
+	 if (Write == NULL)
+	 {
+		 cout << "创建文件错误" << endl;
+		 return;
+	 }
+	 if (Read == NULL)
+	 {
+		 cout << "读取文件错误" << endl;
+		 return;
+	 }
 	 while (1)
 	 {
 
