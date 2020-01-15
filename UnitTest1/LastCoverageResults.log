@@ -1,0 +1,23 @@
+[2020-01-15 02:09:47] [info] Start Program:
+Path:"D:\\sudoku\\Debug\\sudoku.exe"
+Arguments:
+Working directory: "D:\\sudoku\\UnitTest1"
+Modules: Selected: D:\sudoku\Debug\UnitTest1.dll Excluded: 
+Sources: Selected: D:\sudoku\UnitTest1 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\ASUS\AppData\Local\Temp\2kq5etwg.wgm 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2020-01-15 02:09:47] [info] ----------------------------------------------------
+[2020-01-15 02:09:47] [info] Coverage binary generated in file: C:\Users\ASUS\AppData\Local\Temp\2kq5etwg.wgm
+[2020-01-15 02:09:47] [info] ----------------------------------------------------
+[2020-01-15 02:09:47] [error] Your program stop with error code: -1
+[2020-01-15 02:09:47] [warning] No modules were selected. Please check the values of --modules and --excluded_modules.
+You can try to remove all --modules and --excluded_modules and use --modules=D:\sudoku\Debug instead.
