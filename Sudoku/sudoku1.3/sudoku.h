@@ -1,4 +1,4 @@
-#ifndef SUDOKU
+﻿#ifndef SUDOKU
 #define SUDOKU
 #include<iostream>
 #include<ctime>
@@ -30,7 +30,6 @@ public:
 		cols = rows = SCALE;
 		count = 0;
 		memset(arry, 0, sizeof(arry));
-		memset(base, 0, sizeof(base));
 		memset(IfRows, 0, sizeof(IfRows));
 		memset(IfCols, 0, sizeof(IfCols));
 		memset(grid, 0, sizeof(grid));
@@ -45,10 +44,12 @@ public:
 	void Create();
 	void dfs(int a, int b);
 	void FillFile(FILE* w);
+	void RandBase();
 	int GetFile(FILE*);
 	int  Solv(int);
 	void GeneratingEndgame();
 	void rowExchange(const int& r1, const int& r2);
+	void colExchange(const int& c1, const int& c2);
 	void GetArry(char *w,long long &num);
 	int Check();
 };
