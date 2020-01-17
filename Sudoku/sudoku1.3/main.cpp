@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include<string>
 #include<ctime>
 #include<cstdlib>
@@ -16,8 +16,8 @@ char wfile[200000000] = {0};
 long long stringNum = 0;
  int main(int argc, char **argv)
  {
-	 
-	 long long num = check_argument(argc, argv);
+
+	 long long num= check_argument(argc, argv);
 	 if (num > 0)
 	 {
 		 CreateSudokuN(num);
@@ -62,6 +62,7 @@ void Perm(int list[], int k, int m,long long num) {
 								 if (curnum >= num)
 									 return;
 								 //空一行
+								 wfile[stringNum++] = '\n';
 								 wfile[stringNum++] = '\n';
 								 //以下为行列交互
 								 switch (Ck % 2)
@@ -187,16 +188,20 @@ void Perm(int list[], int k, int m,long long num) {
 		 cout << "读取文件错误" << endl;
 		 return;
 	 }
+	 int flags = 0;
 	 //循环存文件中读取残局，然后写入文件
 	 while (1)
 	 {
-
 		 Sudoku temp;
 		 //读取一个残局
 		 if (temp.GetFile(Read))
 			 break;
 		 //解残局
 		 temp.Solv(0);
+		 if (flags == 0)
+			 flags = 1;
+		 else 
+			fprintf(Write, "\n\n");
 		 //写入终局
 		 temp.FillFile(Write);
 
