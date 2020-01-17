@@ -115,8 +115,10 @@ void Sudoku::GetArry(char*w,long long &stringNum) {
 		for (int j = 0; j < 9; j++)
 		{
 			w[stringNum++] = (arry[i][j]+'0');
-			if (j == 8&&i!=8)
+			if (j == 8 ) {
+				if(i!=8)
 				w[stringNum++] = '\n';
+			}
 			else
 				w[stringNum++]= ' ';
 		}
