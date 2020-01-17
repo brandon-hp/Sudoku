@@ -1,4 +1,4 @@
-﻿#include"sudoku.h"
+#include"sudoku.h"
 void Sudoku::Clear()
 {
 	srand((unsigned)time(NULL));
@@ -115,7 +115,7 @@ void Sudoku::GetArry(char*w,long long &stringNum) {
 		for (int j = 0; j < 9; j++)
 		{
 			w[stringNum++] = (arry[i][j]+'0');
-			if (j == 8)
+			if (j == 8&&i!=8)
 				w[stringNum++] = '\n';
 			else
 				w[stringNum++]= ' ';
@@ -134,9 +134,10 @@ void Sudoku::FillFile(FILE* w)
 {
 	for (int i = 0; i < rows; i++)
 	{
-		fprintf(w, "%d %d %d %d %d %d %d %d %d\n", arry[i][0], arry[i][1], arry[i][2], arry[i][3], arry[i][4], arry[i][5], arry[i][6], arry[i][7], arry[i][8]);
+		fprintf(w, "%d %d %d %d %d %d %d %d %d", arry[i][0], arry[i][1], arry[i][2], arry[i][3], arry[i][4], arry[i][5], arry[i][6], arry[i][7], arry[i][8]);
+		if(i!=rows-1)
+			fprintf(w, "\n");
 	}
-	fprintf(w, "\n");
 }
 //从文件中读取一个残局
 int Sudoku::GetFile(FILE *r)
