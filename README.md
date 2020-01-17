@@ -6,3 +6,5 @@ Sudoku 存放所有版本数独程序的源代码，sudoku1.3为最新最优版�
 SudokuGUI 存放GUI源代码  
 UniTest1 存放数独程序的单元测试程序.  
 performance_testing性能测试报告.  
+
+注：换行windows是/r/n两个字符  
