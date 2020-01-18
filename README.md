@@ -11,9 +11,9 @@ performance_testing性能测试报告.
 # 命令行程序说明
 程序在sudoku1.3文件夹中主要包含5个文件：main.c,sudoku.h,Sudoku.cpp,UsingSudoku.h,UsingSudoku.cpp
 # 运行单元测试使用说明  
-程序主要包含unittest1.cpp，Sudoku.cpp
-要修改单元测试所有文件的头文件#include"..\sudoku\sudoku.h"改为你使用的工程名如#include"..\Project1\sudoku.h"
-要将suduku1.3中所有txt文本放入相应的debug\release中
+程序主要包含unittest1.cpp，Sudoku.cpp  
+要修改单元测试所有文件的头文件#include"..\sudoku\sudoku.h"改为你使用的工程名如#include"..\Project1\sudoku.h"  
+要将suduku1.3中所有txt文本放入相应的debug\release中  
 
 
 
