@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "CppUnitTest.h"
 #include"../sudoku/sudoku.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -378,14 +378,18 @@ namespace UnitTest1
 				}
 			FILE  *Write;
 			fopen_s(&Write, "FillFile.txt", "w");
+			if (Write == NULL)
+				return;
 			s.FillFile(Write);
 			fclose(Write);
 			FILE *Read;
 			fopen_s(&Read, "FillFile.txt", "r");
+			if (Read == NULL)
+				return;
 			char buffer[20];
 			for (int i = 0; i < 9; i++)
 			{
-				if (fgets(buffer, 1024, Read) == NULL)
+				if (fgets(buffer, 20, Read) == NULL)
 					break;
 				for (int j = 0; j < 9; j++) {
 					int temp = buffer[j * 2] - '0';
@@ -446,10 +450,14 @@ namespace UnitTest1
 			
 			FILE *Read1;
 			fopen_s(&Read1, "GetFile.txt", "r");
+			if (Read1 == NULL)
+				return;
 			s.GetFile(Read1);
 			fclose(Read1);
 			FILE *Read2;
 			fopen_s(&Read2, "GetFile.txt", "r");
+			if (Read2 == NULL)
+				return;
 			char buffer[1024];
 			for (int i = 0; i < 9; i++)
 			{
@@ -489,6 +497,8 @@ namespace UnitTest1
 			FILE *Read, *Write;
 			fopen_s(&Read, "sudoku2.txt", "r");
 			fopen_s(&Write, "sudoku1.txt", "w");
+			if (Write == NULL||Read==NULL)
+				return;
 			Sudoku temp;
 			temp.GetFile(Read);
 			temp.Solv(0);
@@ -496,6 +506,8 @@ namespace UnitTest1
 			fclose(Write);
 			fclose(Read);
 			fopen_s(&Write, "sudoku1.txt", "w");
+			if (Write == NULL)
+				return;
 			temp.GetFile(Write);
 			Assert::IsTrue(temp.Check()==0);
 			fclose(Write);
