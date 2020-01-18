@@ -260,8 +260,10 @@ namespace UnitTest1
 				for (int j = 0; j < 9; j++)
 				{
 					Assert::IsTrue(w[num++]==(s.arry[i][j] + '0'));
-					if (j == 8)
+					if (j == 8) {
+						if(i!=8)
 						Assert::IsTrue(w[num++] == '\n');
+					}
 					else
 						Assert::IsTrue(w[num++] == ' ');
 				}
@@ -488,7 +490,7 @@ namespace UnitTest1
 			temp.colExchange(2, 3);
 			temp.rowExchange(4, 5);
 			temp.GetArry(wfile, len);
-			char truewfile[1000] = { "9 8 6 7 5 4 3 2 1\n6 5 3 4 2 1 9 8 7\n3 2 9 1 8 7 6 5 4\n8 9 7 6 4 5 2 1 3\n2 1 8 3 9 6 7 4 5\n7 4 2 5 1 3 8 9 6\n5 7 4 9 6 8 1 3 2\n4 6 1 8 3 2 5 7 9\n1 3 5 2 7 9 4 6 8\n" };
+			char truewfile[1000] = { "9 8 6 7 5 4 3 2 1\n6 5 3 4 2 1 9 8 7\n3 2 9 1 8 7 6 5 4\n8 9 7 6 4 5 2 1 3\n2 1 8 3 9 6 7 4 5\n7 4 2 5 1 3 8 9 6\n5 7 4 9 6 8 1 3 2\n4 6 1 8 3 2 5 7 9\n1 3 5 2 7 9 4 6 8" };
 			Assert::IsTrue(strcmp(wfile,truewfile)==0);
 		}
 		TEST_METHOD(Test_SolvSudoku)
