@@ -8,3 +8,9 @@ UniTest1 存放数独程序的单元测试程序.
 performance_testing性能测试报告.  
 
 注：换行windows是/r/n两个字符  
+
+#运行单元测试使用说明  
+要修改单元测试所有文件的头文件#include"..\sudoku\sudoku.h"改为你使用的工程名   
+要将suduku1.3中所有txt文本放入相应的debug\release中   
+
+
