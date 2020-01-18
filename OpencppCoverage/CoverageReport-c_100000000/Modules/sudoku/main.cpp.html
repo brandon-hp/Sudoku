@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>main.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+        <h4></h4>
+		<pre class="prettyprint lang-cpp linenums">
+ï»¿#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;ctime&gt;
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+#include&lt;string&gt;
+#include"UsingSudoku.h"
+#include"sudoku.h"
+ int main(int argc, char **argv)
+<span style = "background-color:#dfd"> {</span>
+
+<span style = "background-color:#dfd">	 long long num= check_argument(argc, argv);</span>
+<span style = "background-color:#fdd">	 if (num &gt; 0)</span>
+	 {
+<span style = "background-color:#fdd">		 CreateSudokuN(num);
+	 }
+	 else if (num == 0)</span>
+	 {
+<span style = "background-color:#fdd">		 SolvSudokuN(argv[2]);</span>
+	 }
+<span style = "background-color:#fdd">	 return 0;
+ }</span></pre>
+	</body>
+</html>

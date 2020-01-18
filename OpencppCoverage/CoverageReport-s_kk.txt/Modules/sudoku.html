@@ -1,0 +1,1242 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <title>sudoku.exe</title>
+        <link rel="stylesheet" type="text/css" href="../third-party/css/style.css"/>
+        <script src="../third-party/RGraph/libraries/RGraph.common.core.js" type="text/javascript"></script>
+        <script src="../third-party/RGraph/libraries/RGraph.common.dynamic.js" type="text/javascript"></script>
+        <script src="../third-party/RGraph/libraries/RGraph.common.tooltips.js" type="text/javascript"></script>
+        <script src="../third-party/RGraph/libraries/RGraph.pie.js" type="text/javascript"></script>
+        <script src="../third-party/JQuery/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            
+            new RGraph.Pie('pi_14246d58-9546-4990-8a31-3137d678a782', [326, 750])
+                .set('labels', ['Cover 30%','Uncover 70%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 326 lines (30%)', 'uncover 750 lines (70%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_9bddb4df-7b63-45de-8c96-864b4a78419d', [0, 9])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 9 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_6f7d359f-b42c-428e-a936-d69abf6baaa4', [0, 3])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 3 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_4a4b29ea-e5d6-4da4-b106-a359a65a26cf', [0, 3])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 3 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_74422964-2398-4f92-a522-e0b42507b418', [0, 5])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 5 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_e2dc565a-8ee5-4c9c-8109-cc06be6baf39', [0, 106])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 106 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_3562c6cd-abef-4394-ab5c-0aa5829a534b', [0, 14])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 14 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_ca885bf7-8368-4e3e-8a9d-d7041ecc0ed9', [0, 3])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 3 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_7a3129d5-a48b-4464-add7-1915da661f4c', [0, 39])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 39 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_766f805d-ab2c-4c61-b739-5502b8926666', [0, 8])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 8 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_40d805ba-0dd4-41ea-a461-26d4cf799256', [0, 4])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 4 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_e32605d4-55d1-4773-aaa3-1c2b3d30b644', [0, 39])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 39 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_6a323b18-b10f-4e57-bfc8-6ac00b50d0df', [0, 20])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 20 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_fa78de51-addc-4b59-afb9-c50d76ef1a71', [0, 2])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 2 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_9f5ca49d-0700-4aa7-b8fc-7697540e4733', [0, 70])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 70 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_50ed6a85-ed7c-4aae-9684-17c0c18ab54d', [0, 105])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 105 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_2d75d414-0fc0-4d3c-97c4-80af87832fab', [0, 6])
+                .set('labels', ['Cover 0%','Uncover 100%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 0 lines (0%)', 'uncover 6 lines (100%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_a59d4014-66aa-4411-ad86-9215e1e29d3f', [14, 88])
+                .set('labels', ['Cover 13%','Uncover 87%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 14 lines (13%)', 'uncover 88 lines (87%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_6584762c-4d23-4811-8a32-11b7ed790c9d', [5, 21])
+                .set('labels', ['Cover 19%','Uncover 81%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 5 lines (19%)', 'uncover 21 lines (81%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_a76c56a7-47a6-4046-b43f-0ee43a3afa2b', [23, 51])
+                .set('labels', ['Cover 31%','Uncover 69%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 23 lines (31%)', 'uncover 51 lines (69%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_ba930477-760a-451a-bad8-96eaf451e35f', [9, 20])
+                .set('labels', ['Cover 31%','Uncover 69%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 9 lines (31%)', 'uncover 20 lines (69%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_78bf6ea6-e665-4408-bf2a-63f1d739bbb2', [3, 6])
+                .set('labels', ['Cover 33%','Uncover 67%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (33%)', 'uncover 6 lines (67%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_fa7635cb-4997-4dc6-a41a-98d48870081b', [36, 70])
+                .set('labels', ['Cover 33%','Uncover 67%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 36 lines (33%)', 'uncover 70 lines (67%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_e46596c4-f935-43ae-8756-10ce762f9947', [3, 3])
+                .set('labels', ['Cover 50%','Uncover 50%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (50%)', 'uncover 3 lines (50%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_bdf0469c-a151-4803-ba18-19b5351d96e9', [6, 4])
+                .set('labels', ['Cover 60%','Uncover 40%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 6 lines (60%)', 'uncover 4 lines (40%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_1e6aec30-87e4-43b3-a5e0-3ce2bb13e91b', [2, 1])
+                .set('labels', ['Cover 66%','Uncover 34%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 2 lines (66%)', 'uncover 1 lines (34%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_9950396c-5a7d-4cd8-816f-15de8c14adde', [58, 25])
+                .set('labels', ['Cover 69%','Uncover 31%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 58 lines (69%)', 'uncover 25 lines (31%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_fccd10fe-d27b-4b83-919b-537bae95f3d6', [45, 16])
+                .set('labels', ['Cover 73%','Uncover 27%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 45 lines (73%)', 'uncover 16 lines (27%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_3f3a53b2-f585-4935-8185-105093d543b4', [3, 1])
+                .set('labels', ['Cover 75%','Uncover 25%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (75%)', 'uncover 1 lines (25%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_0ea54ac0-149c-4f78-aab7-1d994c202c7e', [7, 2])
+                .set('labels', ['Cover 77%','Uncover 23%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 7 lines (77%)', 'uncover 2 lines (23%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_60f93b3c-5ad9-4241-9ddc-8aafa1722b9a', [4, 1])
+                .set('labels', ['Cover 80%','Uncover 20%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 4 lines (80%)', 'uncover 1 lines (20%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_38495228-2e71-4b45-8092-df31ccf19ff8', [4, 1])
+                .set('labels', ['Cover 80%','Uncover 20%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 4 lines (80%)', 'uncover 1 lines (20%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_d2db6d1e-13f4-4100-a0ad-c52732a1f648', [34, 4])
+                .set('labels', ['Cover 89%','Uncover 11%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 34 lines (89%)', 'uncover 4 lines (11%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_7dd71985-7e02-44d7-a091-7faa2b84b10b', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_68cc03be-6d3e-447f-8020-d78b92515fa5', [4, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 4 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_e024ead5-cc81-4cfe-b404-ad08aaddb67b', [2, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 2 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_7e4d0330-5793-4b9e-bf67-1feb1c34b803', [20, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 20 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_56b0c9bd-efd6-4fc2-9d89-8446d2c1e962', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_a2595eb9-2d93-4c49-8bea-aabeb1d2077b', [2, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 2 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_b91ce3ae-90f9-4b14-ae10-28379121f35d', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_64ef042a-40ff-4c24-8016-e26521cdb3bd', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_3fccfd23-b284-432a-8a03-6165a2b8da21', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_2693f9d9-2e16-41df-bf76-e020a1b5291f', [1, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 1 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_eff956f9-3068-41d0-bc1f-e78119c1486b', [2, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 2 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_f354414d-61c7-4c48-a87c-4d4a587c75e2', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_b7dc9980-1be0-4cc1-9556-2320272f1fa3', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_97518afb-8d08-4100-a1de-fd6a5f366c57', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_7d7d86d8-bf53-4c8a-aaf5-ba00563eff77', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_69262c62-39ba-450e-9037-a175df6b5e0a', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_dfd3061c-0774-4049-81c5-8e691abf9f6c', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_fcb63fbe-81a8-4624-9e4e-e80694748c99', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+            new RGraph.Pie('pi_0ed207c8-d624-405a-a699-3fdf1c8a42b4', [3, 0])
+                .set('labels', ['Cover 100%','Uncover 0%'])
+                .set('colors', ['rgb(0,255,0)','rgb(255,0,0)'])
+                .set('linewidth', 1)
+                .set('shadow', true)
+                .set('tooltips', ['cover 3 lines (100%)', 'uncover 0 lines (0%)'])
+                .set('tooltips.event', 'onmousemove')
+                .set('labels.sticks', true)
+                .set('labels.sticks.length', 10)
+                .draw();
+            
+
+      })
+    </script>    
+        <h1>
+        sudoku.exe
+        </h1>
+        <h4>
+        
+        </h4>
+        <table id="rounded-corner">
+            <thead>
+                <tr>
+                    <th scope="col" class="rounded-left">Coverage</th>
+                    <th scope="col">Total lines</th>
+                    <th scope="col" class="rounded-right">Items</th>
+                </tr>
+            </thead> 
+            <tbody>
+                
+                <tr>
+                    <td>
+            <canvas id="pi_14246d58-9546-4990-8a31-3137d678a782" width="280" height="100">Cover 30%</canvas>
+                    </td>            
+                    <td>1076</td>
+                    <td>            
+                      
+                      C:\Users\ASUS\Desktop\sudo\sudoku.exe
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_9bddb4df-7b63-45de-8c96-864b4a78419d" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>9</td>
+                    <td>            
+                       <a href="sudoku/stdio.h.html">C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_6f7d359f-b42c-428e-a936-d69abf6baaa4" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                       <a href="sudoku/time.h.html">C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_4a4b29ea-e5d6-4da4-b106-a359a65a26cf" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                       <a href="sudoku/type_traits.html">D:\VSenterprise\VC\Tools\MSVC\14.24.28314\include\type_traits</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_74422964-2398-4f92-a522-e0b42507b418" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>5</td>
+                    <td>            
+                       <a href="sudoku/utility.html">D:\VSenterprise\VC\Tools\MSVC\14.24.28314\include\utility</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_e2dc565a-8ee5-4c9c-8109-cc06be6baf39" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>106</td>
+                    <td>            
+                       <a href="sudoku/Sudoku.cpp.html">D:\sudoku\sudoku\Sudoku.cpp</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_3562c6cd-abef-4394-ab5c-0aa5829a534b" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>14</td>
+                    <td>            
+                       <a href="sudoku/sudoku.h.html">D:\sudoku\sudoku\sudoku.h</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_ca885bf7-8368-4e3e-8a9d-d7041ecc0ed9" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\matherr.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_7a3129d5-a48b-4464-add7-1915da661f4c" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>39</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\i386\x86_exception_filter.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_766f805d-ab2c-4c61-b739-5502b8926666" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>8</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\eh\i386\chandler4_noexcept.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_40d805ba-0dd4-41ea-a461-26d4cf799256" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>4</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\eh\i386\chandler4gs.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_e32605d4-55d1-4773-aaa3-1c2b3d30b644" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>39</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\gs\gs_report.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_6a323b18-b10f-4e57-bfc8-6ac00b50d0df" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>20</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\helper\i386\llmul.asm(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_fa78de51-addc-4b59-afb9-c50d76ef1a71" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>2</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\misc\guard_support.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_9f5ca49d-0700-4aa7-b8fc-7697540e4733" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>70</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\rtc\error.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_50ed6a85-ed7c-4aae-9684-17c0c18ab54d" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>105</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\rtc\pdblkup.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_2d75d414-0fc0-4d3c-97c4-80af87832fab" width="280" height="100">Cover 0%</canvas>
+                    </td>            
+                    <td>6</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\rtc\userapi.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_a59d4014-66aa-4411-ad86-9215e1e29d3f" width="280" height="100">Cover 13%</canvas>
+                    </td>            
+                    <td>102</td>
+                    <td>            
+                       <a href="sudoku/UsingSudoku.cpp.html">D:\sudoku\sudoku\UsingSudoku.cpp</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_6584762c-4d23-4811-8a32-11b7ed790c9d" width="280" height="100">Cover 19%</canvas>
+                    </td>            
+                    <td>26</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\gs\gs_support.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_a76c56a7-47a6-4046-b43f-0ee43a3afa2b" width="280" height="100">Cover 31%</canvas>
+                    </td>            
+                    <td>74</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\utility_desktop.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_ba930477-760a-451a-bad8-96eaf451e35f" width="280" height="100">Cover 31%</canvas>
+                    </td>            
+                    <td>29</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\rtc\stack.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_78bf6ea6-e665-4408-bf2a-63f1d739bbb2" width="280" height="100">Cover 33%</canvas>
+                    </td>            
+                    <td>9</td>
+                    <td>            
+                       <a href="sudoku/xstring.html">D:\VSenterprise\VC\Tools\MSVC\14.24.28314\include\xstring</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_fa7635cb-4997-4dc6-a41a-98d48870081b" width="280" height="100">Cover 33%</canvas>
+                    </td>            
+                    <td>106</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\utility.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_e46596c4-f935-43ae-8756-10ce762f9947" width="280" height="100">Cover 50%</canvas>
+                    </td>            
+                    <td>6</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\ucrt_stubs.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_bdf0469c-a151-4803-ba18-19b5351d96e9" width="280" height="100">Cover 60%</canvas>
+                    </td>            
+                    <td>10</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\rtc\initsect.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_1e6aec30-87e4-43b3-a5e0-3ce2bb13e91b" width="280" height="100">Cover 66%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_9950396c-5a7d-4cd8-816f-15de8c14adde" width="280" height="100">Cover 69%</canvas>
+                    </td>            
+                    <td>83</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_fccd10fe-d27b-4b83-919b-537bae95f3d6" width="280" height="100">Cover 73%</canvas>
+                    </td>            
+                    <td>61</td>
+                    <td>            
+                       <a href="sudoku/ostream.html">D:\VSenterprise\VC\Tools\MSVC\14.24.28314\include\ostream</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_3f3a53b2-f585-4935-8185-105093d543b4" width="280" height="100">Cover 75%</canvas>
+                    </td>            
+                    <td>4</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\default_precision.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_0ea54ac0-149c-4f78-aab7-1d994c202c7e" width="280" height="100">Cover 77%</canvas>
+                    </td>            
+                    <td>9</td>
+                    <td>            
+                       <a href="sudoku/main.cpp.html">D:\sudoku\sudoku\main.cpp</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_60f93b3c-5ad9-4241-9ddc-8aafa1722b9a" width="280" height="100">Cover 80%</canvas>
+                    </td>            
+                    <td>5</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\eh\i386\secchk.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_38495228-2e71-4b45-8092-df31ccf19ff8" width="280" height="100">Cover 80%</canvas>
+                    </td>            
+                    <td>5</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\misc\debugger_jmc.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_d2db6d1e-13f4-4100-a0ad-c52732a1f648" width="280" height="100">Cover 89%</canvas>
+                    </td>            
+                    <td>38</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\misc\i386\cpu_disp.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_7dd71985-7e02-44d7-a091-7faa2b84b10b" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\commit_mode.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_68cc03be-6d3e-447f-8020-d78b92515fa5" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>4</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\default_local_stdio_options.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_e024ead5-cc81-4cfe-b404-ad08aaddb67b" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>2</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\denormal_control.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_7e4d0330-5793-4b9e-bf67-1feb1c34b803" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>20</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\misc\i386\chkstk.asm(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_56b0c9bd-efd6-4fc2-9d89-8446d2c1e962" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\file_mode.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_a2595eb9-2d93-4c49-8bea-aabeb1d2077b" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>2</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\invalid_parameter_handler.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_b91ce3ae-90f9-4b14-ae10-28379121f35d" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\new_mode.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_64ef042a-40ff-4c24-8016-e26521cdb3bd" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                       <a href="sudoku/corecrt_stdio_config.h.html">C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h</a> 
+                      
+                      
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_3fccfd23-b284-432a-8a03-6165a2b8da21" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\ExternalAPIs\UnifiedCRT\inc\corecrt_stdio_config.h(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_2693f9d9-2e16-41df-bf76-e020a1b5291f" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>1</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\ExternalAPIs\Windows\10\sdk\inc\winnt.h(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_eff956f9-3068-41d0-bc1f-e78119c1486b" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>2</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\inc\vcstartup_internal.h(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_f354414d-61c7-4c48-a87c-4d4a587c75e2" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\eh\tncleanup.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_b7dc9980-1be0-4cc1-9556-2320272f1fa3" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\env_mode.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_97518afb-8d08-4100-a1de-fd6a5f366c57" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\dyn_tls_init.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_7d7d86d8-bf53-4c8a-aaf5-ba00563eff77" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\matherr_detection.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_69262c62-39ba-450e-9037-a175df6b5e0a" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\ucrt_detection.c(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_dfd3061c-0774-4049-81c5-8e691abf9f6c" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\argv_mode.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_fcb63fbe-81a8-4624-9e4e-e80694748c99" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\defaults\thread_locale.cpp(File Not Found)
+                    </td>
+                </tr>        
+                
+                <tr>
+                    <td>
+            <canvas id="pi_0ed207c8-d624-405a-a699-3fdf1c8a42b4" width="280" height="100">Cover 100%</canvas>
+                    </td>            
+                    <td>3</td>
+                    <td>            
+                      
+                      
+                      d:\agent\_work\6\s\src\vctools\crt\vcstartup\src\utility\dyn_tls_dtor.c(File Not Found)
+                    </td>
+                </tr>        
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                <td colspan="2" class="rounded-foot-left"></td>
+                <td class="rounded-foot-right"></td>
+                </tr>
+            </tfoot>            
+        </table>
+    </body>
+</html>

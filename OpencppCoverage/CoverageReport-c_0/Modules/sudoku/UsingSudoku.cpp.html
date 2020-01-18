@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>UsingSudoku.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+        <h4></h4>
+		<pre class="prettyprint lang-cpp linenums">
+#include"sudoku.h"
+int Base[9] = { HEAD,2,3,4,5,6,7,8,1 };
+//µ±Ç°Éú³ÉÊý¶ÀÊýÁ¿
+long long curnum = 0;
+//±£´æËùÓÐÊý¶ÀÖÕ¾Ö
+char wfile[200000000] = { 0 };
+long long stringNum = 0;
+//¶Ô»ù´¡ÐòÁÐ½øÐÐÅÅÁÐÈ»ºóÉú³ÉÊý¶À
+//²ÎÊýlist1-9È«ÅÅÁÐ£¬k£¬mÐòÁÐµÄÏÂ±êµ±k=mÉú³ÉÒ»¸öÈ«ÅÅÁÐ
+//numÖ¸¶¨µÄÊý¶ÀÖÕ¾ÖÊýÁ¿
+<span style = "background-color:#fdd">void Perm(int list[], int k, int m, long long num) {</span>
+	//ÈôÊý¶ÀÊýÁ¿´ïµ½Ö¸±êÔòÍË³ö
+<span style = "background-color:#fdd">	if (curnum &gt;= num)
+		return;</span>
+	//ÈôÕÒµ½Ò»¸öÈ«ÅÅÁÐ
+<span style = "background-color:#fdd">	if (k == m) {
+		Sudoku temp;</span>
+		//ÒÔÕâ¸öÈ«ÅÅÁÐÉú³ÉDFS»ù´¡Êý¶À
+<span style = "background-color:#fdd">		temp.GetBase(list);</span>
+		//Éú³ÉÊý¶À
+<span style = "background-color:#fdd">		temp.Create();</span>
+		//½øÐÐ£¨2£¡*3£¡*3!)^2µÄÐÐÁÐ½»»»
+<span style = "background-color:#fdd">		for (int Ri = 0; Ri &lt; 2; Ri++)</span>
+		{
+<span style = "background-color:#fdd">			for (int Rj = 0; Rj &lt; 6; Rj++)</span>
+			{
+<span style = "background-color:#fdd">				for (int Rk = 0; Rk &lt; 6; Rk++)</span>
+				{
+<span style = "background-color:#fdd">					for (int Ci = 0; Ci &lt; 2; Ci++)</span>
+					{
+<span style = "background-color:#fdd">						for (int Cj = 0; Cj &lt; 6; Cj++)</span>
+						{
+<span style = "background-color:#fdd">							for (int Ck = 0; Ck &lt; 6; Ck++)</span>
+							{
+								//»ñÈ¡Êý¶ÀÐ´ÈëwfileÖÐ
+<span style = "background-color:#fdd">								temp.GetArry(wfile, stringNum);</span>
+								//ÅÐ¶ÏÊý¶ÀÊýÁ¿ÊÇ·ñ´ï±ê
+<span style = "background-color:#fdd">								curnum++;
+								if (curnum &gt;= num)
+									return;</span>
+								//¿ÕÒ»ÐÐ
+<span style = "background-color:#fdd">								wfile[stringNum++] = '\n';
+								wfile[stringNum++] = '\n';</span>
+								//ÒÔÏÂÎªÐÐÁÐ½»»¥
+<span style = "background-color:#fdd">								switch (Ck % 2)</span>
+								{
+<span style = "background-color:#fdd">								case 0:temp.colExchange(7, 8); break;
+								case 1:temp.colExchange(6, 7); break;</span>
+								default:break;
+								}
+<span style = "background-color:#fdd">							}
+							switch (Cj % 2)</span>
+							{
+<span style = "background-color:#fdd">							case 0:temp.colExchange(4, 5); break;
+							case 1:temp.colExchange(3, 4); break;</span>
+							default:break;
+							}
+<span style = "background-color:#fdd">						}
+						temp.colExchange(1, 2);
+					}
+					switch (Rk % 2)</span>
+					{
+<span style = "background-color:#fdd">					case 0:temp.rowExchange(7, 8); break;
+					case 1:temp.rowExchange(6, 7); break;</span>
+					default:break;
+					}
+<span style = "background-color:#fdd">				}</span>
+
+
+<span style = "background-color:#fdd">				switch (Rj % 2)</span>
+				{
+<span style = "background-color:#fdd">				case 0:temp.rowExchange(4, 5); break;
+				case 1:temp.rowExchange(3, 4); break;</span>
+				default:break;
+				}
+<span style = "background-color:#fdd">			}
+			temp.rowExchange(1, 2);
+		}</span>
+
+
+
+<span style = "background-color:#fdd">	}//Ê¹ÓÃËÑË÷½øÐÐÈ«ÅÅÁÐ</span>
+	else {
+<span style = "background-color:#fdd">		for (int i = k; i &lt;= m; i++) {</span>
+
+<span style = "background-color:#fdd">			swap(list[i], list[k]);
+			Perm(list, k + 1, m, num);
+			if (curnum &gt;= num)
+				return;
+			swap(list[i], list[k]);
+		}</span>
+	}
+
+<span style = "background-color:#fdd">}</span>
+//²ÎÊýÎªcmdÖ¸Áî²ÎÊý
+long long check_argument(int argc, char** argv)
+<span style = "background-color:#dfd">{</span>
+	//ÅÐ¶ÏÃüÁî²ÎÊýÊÇ·ñÊÇ3¸ö
+<span style = "background-color:#dfd">	if (argc != 3)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "²ÎÊýÊýÁ¿²»ÕýÈ·£¡" &lt;&lt; endl;
+		exit(-1);
+	}//ÅÐ¶ÏÊÇ·ñÊÇ-cÃüÁî</span>
+<span style = "background-color:#dfd">	else if (!strcmp("-c", argv[1]))</span>
+	{
+		//-cÃüÁîÊýÁ¿ÊÇ·ñ³¬³ö·¶Î§
+<span style = "background-color:#dfd">		long long num = atoll(argv[2]);
+		if (num &gt; 1000000 || num &lt;= 0)</span>
+		{
+<span style = "background-color:#dfd">			cout &lt;&lt; "-c¹¦ÄÜ Ã»ÓÐÊäÈëÊý¶ÀÊýÁ¿»òÕßÊýÁ¿¹ý´ó!" &lt;&lt; endl;
+			exit(-1);</span>
+		}
+		//·µ»ØÉú³ÉÖÕ¾ÖÊý
+<span style = "background-color:#fdd">		return num;</span>
+
+<span style = "background-color:#fdd">	}//ÅÐ¶ÏÊÇ·ñÊÇ-sÃüÁî£¬ÈôÊÇ·µ»Ø0
+	else if (!strcmp("-s", argv[1]))</span>
+	{
+<span style = "background-color:#fdd">		return 0;
+	}</span>
+	else//ÆäËûÖ¸Áî±¨´í
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "³ÌÐòÃ»ÓÐ¸Ä¹¦ÄÜ!" &lt;&lt; endl;
+		exit(-1);</span>
+	}
+<span style = "background-color:#fdd">}</span>
+//Éú³Énum¸öÊý¶À,²ÎÊýÎªÊý¶ÀÊý
+void CreateSudokuN(long long num)
+<span style = "background-color:#fdd">{
+	curnum = 0;</span>
+	FILE* Write;
+	//´ò¿ªÄ¿±êÎÄ¼þ
+<span style = "background-color:#fdd">	fopen_s(&amp;Write, TARGET, "w");
+	if (Write == NULL)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "´´½¨ÎÄ¼þ´íÎó" &lt;&lt; endl;
+		return;</span>
+	}
+	//Ëæ»ú»ù´¡ÊýÁÐ
+<span style = "background-color:#fdd">	for (int i = 1; i &lt; 9; i++)</span>
+	{
+<span style = "background-color:#fdd">		swap(Base[i], Base[rand() % 8 + 1]);
+	}</span>
+	//¶Ô»ù´¡ÊýÁÐ½øÐÐÈ«ÅÅÁÐ
+<span style = "background-color:#fdd">	Perm(Base, 1, 8, num);</span>
+	//½«Êý¶À¼¯Ð´ÈëÎÄ¼þ
+<span style = "background-color:#fdd">	fprintf(Write, "%s", wfile);
+	fclose(Write);
+}</span>
+//½âÊý¶À£¬²ÎÊýÎª²Ð¾Ö´æ·ÅÂ·¾¶
+void SolvSudokuN(char* path)
+<span style = "background-color:#fdd">{</span>
+
+	FILE* Read, * Write;
+	//´ò¿ª²Ð¾Ö´æ·ÅÎÄ¼þºÍÐ´ÈëÖÕ¾ÖµÄÎÄ¼þ
+<span style = "background-color:#fdd">	fopen_s(&amp;Read, path, "r");
+	fopen_s(&amp;Write, TARGET, "w");
+	if (Write == NULL)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "´´½¨ÎÄ¼þ´íÎó" &lt;&lt; endl;
+		return;</span>
+	}
+<span style = "background-color:#fdd">	if (Read == NULL)</span>
+	{
+<span style = "background-color:#fdd">		cout &lt;&lt; "¶ÁÈ¡ÎÄ¼þ´íÎó" &lt;&lt; endl;
+		return;</span>
+	}
+<span style = "background-color:#fdd">	int flags = 0;</span>
+	//Ñ­»·´æÎÄ¼þÖÐ¶ÁÈ¡²Ð¾Ö£¬È»ºóÐ´ÈëÎÄ¼þ
+<span style = "background-color:#fdd">	while (1)</span>
+	{
+<span style = "background-color:#fdd">		Sudoku temp;</span>
+		//¶ÁÈ¡Ò»¸ö²Ð¾Ö
+<span style = "background-color:#fdd">		if (temp.GetFile(Read))
+			break;</span>
+		//½â²Ð¾Ö
+<span style = "background-color:#fdd">		temp.Solv(0);
+		if (flags == 0)
+			flags = 1;</span>
+		else
+<span style = "background-color:#fdd">			fprintf(Write, "\n\n");</span>
+		//Ð´ÈëÖÕ¾Ö
+<span style = "background-color:#fdd">		temp.FillFile(Write);</span>
+
+<span style = "background-color:#fdd">	}</span>
+
+<span style = "background-color:#fdd">	fclose(Write);
+	fclose(Read);</span>
+
+<span style = "background-color:#fdd">}</span></pre>
+	</body>
+</html>

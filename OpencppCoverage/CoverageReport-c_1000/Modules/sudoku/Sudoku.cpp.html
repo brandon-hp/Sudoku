@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>Sudoku.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+	<body onload="prettyPrint()">
+        <h4></h4>
+		<pre class="prettyprint lang-cpp linenums">
+ï»¿#include"sudoku.h"
+void Sudoku::Clear()
+{
+	srand((unsigned)time(NULL));
+	cols = rows = SCALE;
+	count = 0;
+	memset(IfRows, 0, sizeof(IfRows));
+	memset(IfCols, 0, sizeof(IfCols));
+	memset(grid, 0, sizeof(grid));
+	memset(Tgrid, 0, sizeof(Tgrid));
+	memset(index, 0, sizeof(index));
+	memset(TempArry, 0, sizeof(TempArry));
+	IsOver = false;
+	memset(arry, 0, sizeof(arry));
+}
+void Sudoku::Create()
+<span style = "background-color:#dfd">{</span>
+
+<span style = "background-color:#dfd">	dfs(0, 0);
+}</span>
+//å¯¹æ£çè¿è¡æ·±æ
+//currowï¼curcolä¸ºå½åè¡å
+void Sudoku::dfs(int currow, int curcol)
+<span style = "background-color:#dfd">{
+	if (IsOver)  return;</span>
+	//è¥æ·±æå°åºçæä¸ä¸ªæ£çï¼åå­å¥æ°ç¬ä¸­éåº
+<span style = "background-color:#dfd">	if (currow == 9 &amp;&amp; curcol == 0)</span>
+	{
+<span style = "background-color:#dfd">		for (int i = 0; i &lt; 9; i++)</span>
+		{
+<span style = "background-color:#dfd">			for (int j = 0; j &lt; 9; j++)</span>
+			{
+<span style = "background-color:#dfd">				arry[i][j] = TempArry[i][j];</span>
+				
+<span style = "background-color:#dfd">			}
+		}
+		IsOver = true;
+		return;</span>
+	}
+<span style = "background-color:#dfd">	if (currow == 9) {</span>
+<span style = "background-color:#fdd">		return;</span>
+	}
+	//å½åååæ ¼å¯¹åºç3*3ç½æ ¼ä¸æ 
+<span style = "background-color:#dfd">	int Gindex = currow / 3 * 3 + curcol / 3 + 1;</span>
+	//ä¾æ¬¡å¡«å¥baseæ°ç»
+<span style = "background-color:#dfd">	for (int i = 0; i &lt; 9; i++)</span>
+	{
+		//å¤æ­æ¯å¦è½å¡«å¥
+<span style = "background-color:#dfd">		if (!IfRows[currow][base[i]] &amp;&amp; !IfCols[curcol][base[i]] &amp;&amp; !grid[Gindex][base[i]])</span>
+		{
+			//å¯¹ç¸åºè¡åç½æ ¼æ°ç»ç½®1
+<span style = "background-color:#dfd">			TempArry[currow][curcol] = base[i];
+			IfRows[currow][base[i]] = true;
+			IfCols[curcol][base[i]] = true;
+			grid[Gindex][base[i]] = true;</span>
+			//å¯¹ä¸ä¸ä¸ªç½æ ¼è¿è¡æ·±æ
+<span style = "background-color:#dfd">			if (curcol == 8)
+				dfs(currow + 1, 0);</span>
+			else
+<span style = "background-color:#dfd">				dfs(currow, curcol + 1);</span>
+			//å¤å
+<span style = "background-color:#dfd">			IfRows[currow][base[i]] = false;
+			IfCols[curcol][base[i]] = false;
+			grid[Gindex][base[i]] = false;</span>
+		}
+<span style = "background-color:#dfd">	}</span>
+	return;
+<span style = "background-color:#dfd">}</span>
+//éè¿æ·±æè§£æ°ç¬ï¼åçådfs
+int Sudoku::Solv(int n)
+<span style = "background-color:#fdd">{</span>
+
+<span style = "background-color:#fdd">	if (n &gt;= count) {
+		return 1;</span>
+	}
+<span style = "background-color:#fdd">	for (int j = 1; j &lt;= 9; j++) {
+		int Gindex = index[n][0] / 3 * 3 + index[n][1] / 3 + 1;
+		if (!IfRows[index[n][0]][j] &amp;&amp; !IfCols[index[n][1]][j] &amp;&amp; !grid[Gindex][j]) {
+			IfRows[index[n][0]][j] = true;
+			IfCols[index[n][1]][j] = true;
+			grid[Gindex][j] = true;
+			arry[index[n][0]][index[n][1]] = j;
+			if (Solv(n + 1))return 1;
+			IfRows[index[n][0]][j] = false;
+			IfCols[index[n][1]][j] = false;
+			grid[Gindex][j] = false;</span>
+		}
+<span style = "background-color:#fdd">	}
+	return 0;</span>
+
+<span style = "background-color:#fdd">}</span>
+<span style = "background-color:#dfd">void Sudoku::rowExchange(const int&amp; r1, const int&amp; r2) {</span>
+
+<span style = "background-color:#dfd">	for (int i = 0; i &lt; 9; i++) {
+		int t = arry[r1][i];
+		arry[r1][i] = arry[r2][i];
+		arry[r2][i] = t;
+	}
+}</span>
+void Sudoku::colExchange(const int&amp; c1, const int&amp; c2)
+<span style = "background-color:#dfd">{</span>
+
+<span style = "background-color:#dfd">	for (int i = 0; i &lt; 9; i++) {
+		int t = arry[i][c1];
+		arry[i][c1] = arry[i][c2];
+		arry[i][c2] = t;
+	}</span>
+
+
+<span style = "background-color:#dfd">}
+void Sudoku::GetArry(char*w,long long &amp;stringNum) {</span>
+
+<span style = "background-color:#dfd">	for (int i = 0; i &lt; 9; i++)</span>
+	{
+<span style = "background-color:#dfd">		for (int j = 0; j &lt; 9; j++)</span>
+		{
+<span style = "background-color:#dfd">			w[stringNum++] = (arry[i][j]+'0');
+			if (j == 8 ) {
+				if(i!=8)
+				w[stringNum++] = '\n';
+			}</span>
+			else
+<span style = "background-color:#dfd">				w[stringNum++]= ' ';
+		}
+}
+}</span>
+void Sudoku::GetBase(int *list)
+<span style = "background-color:#dfd">{
+	for (int i = 0; i &lt; 9; i++)</span>
+	{
+<span style = "background-color:#dfd">		base[i] = list[i];
+	}</span>
+
+<span style = "background-color:#dfd">}</span>
+void Sudoku::FillFile(FILE* w)
+<span style = "background-color:#fdd">{
+	for (int i = 0; i &lt; rows; i++)</span>
+	{
+<span style = "background-color:#fdd">		fprintf(w, "%d %d %d %d %d %d %d %d %d", arry[i][0], arry[i][1], arry[i][2], arry[i][3], arry[i][4], arry[i][5], arry[i][6], arry[i][7], arry[i][8]);
+		if(i!=rows-1)
+			fprintf(w, "\n");
+	}
+}</span>
+//ä»æä»¶ä¸­è¯»åä¸ä¸ªæ®å±
+int Sudoku::GetFile(FILE *r)
+<span style = "background-color:#fdd">{
+	memset(index, 0, sizeof(index));</span>
+	char buffer[1024];
+<span style = "background-color:#fdd">	for (int i = 0; i &lt; 9; i++)</span>
+	{
+<span style = "background-color:#fdd">		if (fgets(buffer, 1024, r) == NULL)
+			return 1;
+		for (int j = 0; j &lt; 9; j++) {
+			arry[i][j] = buffer[j * 2] - '0';
+			int Gindex = i / 3 * 3 + j / 3 + 1;</span>
+			//å¤æ­å½åååæ ¼æ¯å¦ä¸º0
+<span style = "background-color:#fdd">			if (arry[i][j])</span>
+			{
+<span style = "background-color:#fdd">				IfRows[i][arry[i][j]] = 1;
+				IfCols[j][arry[i][j]] = 1;
+				grid[Gindex][arry[i][j]] = 1;
+			}//ä¸º0æ¯å°ä¸æ è®°å¥å°indexæ°ç»ä¸­</span>
+			else
+			{
+
+<span style = "background-color:#fdd">				index[count][0] = i;
+				index[count][1] = j;
+				count++;</span>
+			}
+
+<span style = "background-color:#fdd">		}
+	}
+	fgets(buffer, 1024, r);
+	return 0;
+}</span>
+//å¯¹ç»å±æç©ºçææ®å±
+void Sudoku::GeneratingEndgame()
+{
+	int brry[100];
+	//è®°å½æ¯ä¸ª3*3ååæ ¼ä¸­æ°å­å¯¹åºçä¸ç»´åºå·ï¼å±çæ9ä¸ªä¸ç»´åºå·æ°ç»
+	for (int i = 0; i&lt;9; i++)
+		for (int j = 0; j &lt; 9; j++)
+		{
+			int Gindex = i / 3 * 3 + j / 3 + 1;
+			Tgrid[Gindex][0]++;
+			int index1 = Tgrid[Gindex][0];
+			Tgrid[Gindex][index1] = i * 9 + j;
+		}
+	//å¯¹9ä¸ª3*3ç½æä¸¤ä¸ªç©ºæ ¼å³å¯¹9ä¸ªä¸ç»´åºå·æ°ç»æ·æ±°2ä¸ªæ°ï¼å°æ·æ±°çæ°ç§»è³éå°¾
+	//å°æ²¡æ·æ±°çæ°æ¾å¥brryæ°ç»
+	for (int i = 1; i &lt;= 9; i++)
+	{
+		int temp = rand() % 9 + 1;
+		swap(Tgrid[i][9], Tgrid[i][temp]);
+		temp = rand() % 8 + 1;
+		swap(Tgrid[i][8], Tgrid[i][temp]);
+		for (int j = 0; j &lt; 7; j++)
+			brry[i * 7 - 7 + j] = Tgrid[i][j + 1];
+	}
+	//è®°å½è¿éè¦éæºæ·æ±°numä¸ªæ°ï¼å°æ·æ±°çæ°ç§»è³éå°¾
+	int num = rand() % 31 + 12;
+	for (int i = 0; i &lt;= num; i++)
+	{
+		int temp = rand() % (63 - i);
+		swap(brry[temp], brry[63 - i - 1]);
+	}
+	//å¯¹å©ä¸æ²¡æ·æ±°çæ°çä¸ç»´åºå·è¿è¡æå
+	sort(brry, brry + 63 - num);
+	//å¨æ£çä¸ææä¸å¨æ°ç»éçæ°
+	int temp = 0;
+	for (int i = 0; i &lt; 9; i++) {
+		for (int j = 0; j &lt; 9; j++)
+		{
+			if (temp == 63 - num)
+				arry[i][j] = 0;
+			else if (brry[temp] == i * 9 + j)
+			{
+				temp++;
+			}
+			else
+			{
+				arry[i][j] = 0;
+			}
+
+
+		}
+	}
+
+
+}
+void Sudoku::RandBase()
+{
+	for (int i = 1; i &lt; 9; i++)
+	{
+		swap(base[i], base[rand() % 8 + 1]);
+	}
+
+}
+int Sudoku::Check()
+{
+	memset(IfRows, 0, sizeof(IfRows));
+	memset(IfCols, 0, sizeof(IfCols));
+	memset(grid, 0, sizeof(grid));
+	for (int i = 0; i &lt; 9; i++)
+	{
+		for (int j = 0; j &lt; 9; j++)
+		{
+			int temp = arry[i][j];
+			if (temp == 0)
+				return 2;
+			int Gindex = i / 3 * 3 + j / 3 + 1;
+			if (!IfRows[i][temp] &amp;&amp; !IfCols[j][temp] &amp;&amp; !grid[Gindex][temp])
+			{
+				IfRows[i][temp] = true;
+				IfCols[j][temp] = true;
+				grid[Gindex][temp] = true;
+
+			}
+			else
+				return 1;
+
+		}
+
+
+	}
+	return 0;
+
+
+}</pre>
+	</body>
+</html>
